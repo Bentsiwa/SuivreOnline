@@ -126,7 +126,8 @@
 			
 			return $this->query($strQuery);
 		}
-		function updatingtest(image){
+
+		function updatingtest($image){
 			$strQuery="update device set
 			image='$image'
 			where deviceid=21";
