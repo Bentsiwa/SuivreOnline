@@ -43,6 +43,9 @@ $cmd=$_REQUEST['cmd'];
 		case 13:
 			getLocations();
 		break;
+		case 14:
+			test();
+		break;
 
 		default:
 			echo '{"result":0,"message":"Wrong command"}';
@@ -571,7 +574,10 @@ function getLocations(){
 	}
 }
 
-
+function test(){
+	// $image=$_REQUEST['img'];
+	// $row=$obj->updatingtest($image);
+}
 
 function sendNotification(){
 	$to="APA91bFIj2WLkD3W4kbZcGO7dyI-TKKX0QpYCwtzqE2cNC0GbnUfQ7_gvQKOUloSb9T-6OZMxKdHXj8biiMYVgRJJP-C6b3PfpC7Kzu4G77PqMeGekHU9W6qTwnu0YTtWGNd6tGMBQka";

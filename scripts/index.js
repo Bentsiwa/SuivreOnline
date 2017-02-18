@@ -142,6 +142,7 @@ function successMove(entry) {
 
 function resOnError(error) {
     alert(error.code);
+    
 }
 
 })();
