@@ -53,7 +53,8 @@
 	 //  var map = new google.maps.Map(mapCanvas, mapOptions);
 
 	};
-
+	 var d = new Date();
+	 var n = d.getTime();
 
 	function onMapInit(map) {
 	}
@@ -115,8 +116,7 @@
 
 	//Callback function when the file system uri has been resolved
 	function resolveOnSuccess(entry){ 
-	    var d = new Date();
-	    var n = d.getTime();
+	   
 	    //new file name
 	    var newFileName = n + ".jpg";
 	    var myFolderApp = "Suivre";
@@ -137,7 +137,7 @@
 function successMove(entry) {
     //I do my insert with "entry.fullPath" as for the path
     alert("worked");
-    alert(entry);
+    alert(entry.Suivre+"/"+n);
 }
 
 function resOnError(error) {
