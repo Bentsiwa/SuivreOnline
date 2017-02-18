@@ -136,6 +136,8 @@
 //Callback function when the file has been moved successfully - inserting the complete path
 function successMove(entry) {
     //I do my insert with "entry.fullPath" as for the path
+    alert("worked");
+    alert(entry);
 }
 
 function resOnError(error) {
