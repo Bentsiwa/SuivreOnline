@@ -71,7 +71,7 @@
 	                <button style="background-color:#00b3b3; color:white;" id="login" class="ui-btn">Login</button>
                  </div>
                  <br>
-                 <h6 class="clr-white" >Don't have an account? <a  class="clr-white" href="register.html"><b class="clr-white">Sign up</b></a></h6>
+                 <h6 class="clr-white" >Don't have an account? <a href="" class="clr-white" id="register"><b class="clr-white">Sign up</b></a></h6>
 
              </div>
          </form>
@@ -127,6 +127,7 @@
 		<script >
 		  
 		  document.getElementById("login").addEventListener("click", login);
+		  document.getElementById("register").addEventListener("click", register);
 
 			function loginComplete(xhr,status){
 		        if(status!="success"){
@@ -173,6 +174,9 @@
 		        async:true,
 		        complete:loginComplete
 		      });
+		   }
+		   function register(){
+		   		window.location.href="register.html";
 		   }
 		</script>
 		<script type="text/javascript" src="js/index.js"></script>

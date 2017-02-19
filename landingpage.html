@@ -111,7 +111,7 @@
 			</div>
 
 			<div role="main" class="ui-content" data-inset="false">
-				<a href="starttracking.html" class="float">
+				<a href="" id="tracking" class="float">
 					<i class="material-icons my-float" style="color:white;">location_searching</i>
 				</a>
 				<div class="label-container">
@@ -121,26 +121,13 @@
 				<ul data-role="listview" data-icon="false">
 				<li data-role="list-divider">
 					Devices
-					<a href="untitled.html">Untitled</a>
+					<!-- <a href="untitled.html">Untitled</a> -->
 				</li>
 
 				<div id="devices">
 			
 			</ul>
-			<div data-role="popup" id="delete">
-
-                <div data-role="header">
-                	<h1 class='nd-title'>Confirm delete</h1>
-            	</div>
-
-                <div data-role="content">
-                    <p>Are you sure you want to delete this device?</p>
-                    <button onclick="continueDelete()" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-check'></i> Yes</button>
-                    <button data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-cancel'></i> No</button>
-
-                </div>
-            </div>
-
+		
            
 
 			</div>
@@ -182,7 +169,11 @@
 		var newdeviceid="";
 		
 
-		 //document.getElementById("editdevice").addEventListener("click", editdevice);
+		 document.getElementById("tracking").addEventListener("click", starttracking);
+
+		 	function starttracking(){
+		 		window.location.href="starttracking.html";
+		 	}
 
 			function continueDelete(){
 			
