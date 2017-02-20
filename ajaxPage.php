@@ -206,6 +206,10 @@ function addDevice(){
 		echo '{"result":0,"message":"Tag ID is not given"}';
 		return;
 	}
+	if(!isset($_REQUEST['image'])){
+		echo '{"result":0,"message":"Image is not given"}';
+		return;
+	}
 	if($_REQUEST['device']==""){
 		echo '{"result":0,"message":"Device name is not given"}';
 		return;
@@ -219,6 +223,10 @@ function addDevice(){
 		echo '{"result":0,"message":"Tag ID is not given"}';
 		return;
 	}
+	if($_REQUEST['image']==""){
+		echo '{"result":0,"message":"Image is not given"}';
+		return;
+	}
 	
 	
 	$device=$_REQUEST['device'];
@@ -226,13 +234,14 @@ function addDevice(){
 	
 	$tag=$_REQUEST['tag'];
 	$userid=$_REQUEST['userid'];
+	$image=$_REQUEST['image'];
 
 	
 	include('user.php');
 	$obj=new user();
 
 	
-		$row=$obj->addDevice($device,$description, $tag, $userid);
+		$row=$obj->addDevice($device,$description, $tag, $userid,$image);
 
 		if($row==true){
 			echo '{"result":1,"message":"Device added"}';
