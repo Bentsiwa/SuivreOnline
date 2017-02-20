@@ -77,10 +77,10 @@
                         <button  class="ui-btn" id="fileupload" ><i class='zmdi zmdi-file'></i> Upload a Photo</button>
                         <center><div class="clr-blue-grey nd2-subhead">
                             Or
-                            <!-- <a href="untitled.html">Untitled</a> -->
                           </div></center> <input type="file" id="pic" style="display:none">
 				          <button class="ui-btn" id="capturePhoto"><i class='zmdi zmdi-camera'></i>Take a photo</button>	<br />
-                  <div><center><img class="lazy" style="display:none;width:150px;height:150px;" id="smallImage" src="" /></center></div>
+                  <div><center><img id="smallImage" style="width:150px;height:150px;"  src="#" /></center></div>
+                   
 				  	<br />
 
 				</div>
@@ -88,8 +88,7 @@
                         <button id="add" class="ui-btn ui-btn-raised clr-primary">Add </button>
                       
                     </div>
-               
-                
+   
 
             </div>
             <div data-role="popup" id="addingimage">
@@ -118,9 +117,21 @@
           document.getElementById("add").addEventListener("click", addDevice);
 
            // document.getElementById("pic").addEventListener("click", upload);
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#smallImage').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+            alert(smallImage.src);
+        }
+    }
+    
 
-
-          
+   
           $(document).ready(function(){
             $("#fileupload").click(function () {
                    
@@ -131,10 +142,11 @@
             //    alert(file);
             // };
             $("#pic").change(function(){
-                var file = document.getElementById("pic").value;
-               alert(file);
-               //smallImage.src =file.replace(/C:\\fakepath\\/i, '');
-                 smallImage.src =file;
+              readURL(this);
+               //  var file = document.getElementById("pic").value.replace(/C:\\fakepath\\/i, '');
+               // alert(file);
+               // smallImage.src =file;
+                 
             });
           });
            
