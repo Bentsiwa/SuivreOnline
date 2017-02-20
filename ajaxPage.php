@@ -152,10 +152,25 @@ function login(){
 
 }
 function getDevices(){
+	// if(!isset($_REQUEST['id'])){
+	// 	echo '{"result":0,"message":"User can not be identified"}';
+	// 	return;
+	// }
+	// if($_REQUEST['id']==""){
+	// 	echo '{"result":0,"message":"User can not be identified"}';
+	// 	return;
+	// }
 
 	include('user.php');
 	$obj=new user();
-	$row=$obj->getDevices();
+
+	if(isset($_REQUEST['id'])){
+		$id=$_REQUEST['id'];
+		$row=$obj->getDevices($id);
+	}else{
+		$row=$obj->getDevices();
+	}
+	
 	if($row==true){
 		$row=$obj->fetch();
 			echo '{"result":1,"device":[';
@@ -171,7 +186,7 @@ function getDevices(){
 	}
 
 	else{
-		echo '{"result":0,"message":"Could not fetch pools"}';
+		echo '{"result":0,"message":"Error fetching devices"}';
 	}
 
 }

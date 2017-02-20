@@ -16,8 +16,9 @@
         <link rel="stylesheet" href="vendor/waves/waves.min.css" />
         <link rel="stylesheet" href="vendor/wow/animate.css" />
         <link rel="stylesheet" href="css/nativedroid2.css" />
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
          <script>
+
 			var userAgent = navigator.userAgent + '';
 			if (userAgent.indexOf('iPhone') > -1) {
 				document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
@@ -73,8 +74,12 @@
                         <input type="text" name="tag" id="tag" value="" data-clear-btn="true" placeholder="001">
 
                         
-                        <a href="#addingimage" data-rel='popup' data-position-to='window' data-role='button' data-inline='true' data-transition='pop'class="ui-btn"><i class='zmdi zmdi-camera'></i> Upload Image</a>
-				<button class="ui-btn" id="capturePhoto"><i class='zmdi zmdi-camera'></i>Upload Image</button>	<br />
+                        <button  class="ui-btn" id="fileupload" ><i class='zmdi zmdi-file'></i> Upload a Photo</button>
+                        <center><div class="clr-blue-grey nd2-subhead">
+                            Or
+                            <!-- <a href="untitled.html">Untitled</a> -->
+                          </div></center> <input type="file" id="pic" style="display:none">
+				          <button class="ui-btn" id="capturePhoto"><i class='zmdi zmdi-camera'></i>Take a photo</button>	<br />
                   <div><center><img class="lazy" style="display:none;width:150px;height:150px;" id="smallImage" src="" /></center></div>
 				  	<br />
 
@@ -111,6 +116,29 @@
 	<script >
           
           document.getElementById("add").addEventListener("click", addDevice);
+
+           // document.getElementById("pic").addEventListener("click", upload);
+
+
+          
+          $(document).ready(function(){
+            $("#fileupload").click(function () {
+                   
+                      $("#pic").trigger('click');
+                  });
+            // $("#pic").change = function(e) { 
+            //    var file = document.getElementById("pic").value;
+            //    alert(file);
+            // };
+            $("#pic").change(function(){
+                var file = document.getElementById("pic").value;
+               alert(file);
+               smallImage.src =file.replace(/C:\\fakepath\\/i, '');
+            });
+          });
+           
+              
+           
 
             function addDeviceComplete(xhr,status){
                 if(status!="success"){
@@ -166,6 +194,7 @@
         </script>
 
 			<script type="text/javascript" src="js/index.js"></script>
+
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 			<script type="text/javascript" src="cordova.js"></script>
 			<script type="text/javascript" src="scripts/platformOverrides.js"></script>

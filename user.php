@@ -80,8 +80,12 @@
 
 		}
 		
-		function getDevices(){
+		function getDevices($id=false){
 			$strQuery="select * from device";
+
+			if($id!=false){
+                $strQuery=$strQuery . " where userid=$id";
+            }
 			
 			return $this->query($strQuery);
 		}

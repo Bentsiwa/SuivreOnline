@@ -247,8 +247,10 @@
             }
 
               function getDevices(){
+              	var userid=localStorage.getItem("id");
+              
 		
-		      var ajaxPageUrl="http://suivre.000webhostapp.com/ajaxPage.php?cmd=4";
+		      var ajaxPageUrl="http://suivre.000webhostapp.com/ajaxPage.php?cmd=4&id="+userid;
 		  		
 		      $.ajax(ajaxPageUrl,{
 		        async:true,
@@ -270,6 +272,9 @@
 		          else{
 		             var result="";
 		              var length=obj.device.length;
+		              if(length<=0){
+		              	alert("No device has been added");
+		              }
 		              
 		              while(length>0){
 		              	if(length==1){

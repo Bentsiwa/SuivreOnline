@@ -84,42 +84,42 @@
 		<script>
 		  // Initialize Firebase
 		  
-		  var config = {
-		    apiKey: "AIzaSyDFTaM3V2z_I2FKTFnLrYsRFqsf2K1F-u8",
-		    authDomain: "suivre-156322.firebaseapp.com",
-		    databaseURL: "https://suivre-156322.firebaseio.com",
-		    storageBucket: "suivre-156322.appspot.com",
-		    messagingSenderId: "81511517930"
-		  };
-		  firebase.initializeApp(config);
+		 //  var config = {
+		 //    apiKey: "AIzaSyDFTaM3V2z_I2FKTFnLrYsRFqsf2K1F-u8",
+		 //    authDomain: "suivre-156322.firebaseapp.com",
+		 //    databaseURL: "https://suivre-156322.firebaseio.com",
+		 //    storageBucket: "suivre-156322.appspot.com",
+		 //    messagingSenderId: "81511517930"
+		 //  };
+		 //  firebase.initializeApp(config);
 		
-			  const messaging = firebase.messaging();
-			 messaging.requestPermission()
-			.then(function() {
-			 // alert('Notification permission granted.');
-			  return messaging.getToken();
-			  // TODO(developer): Retrieve an Instance ID token for use with FCM.
-			  // ...
-			})
-			.then(function(token){
-				//alert(token);
-				//sending data
-				// var firebaseRef=firebase.database().ref();
- 			// 	firebaseRef.push().set("Me notification");
- 				//retrieving data
- 				var firebaseHeadingRef=firebase.database().ref().child("Hello");
- 				firebaseHeadingRef.on('value',function(datasnapshot){
- 					//alert(datasnapshot.val());
- 				})
-			})
-			.catch(function(err) {
-			  alert('Unable to get permission to notify.', err);
-			});
+			//   const messaging = firebase.messaging();
+			//  messaging.requestPermission()
+			// .then(function() {
+			//  // alert('Notification permission granted.');
+			//   return messaging.getToken();
+			//   // TODO(developer): Retrieve an Instance ID token for use with FCM.
+			//   // ...
+			// })
+			// .then(function(token){
+			// 	//alert(token);
+			// 	//sending data
+			// 	// var firebaseRef=firebase.database().ref();
+ 		// 	// 	firebaseRef.push().set("Me notification");
+ 		// 		//retrieving data
+ 		// 		var firebaseHeadingRef=firebase.database().ref().child("Hello");
+ 		// 		firebaseHeadingRef.on('value',function(datasnapshot){
+ 		// 			//alert(datasnapshot.val());
+ 		// 		})
+			// })
+			// .catch(function(err) {
+			//   alert('Unable to get permission to notify.', err);
+			// });
 
-			messaging.onMessage(function(payload) {
-			  alert("Message received. ", payload);
-			  // ...
-			});
+			// messaging.onMessage(function(payload) {
+			//   alert("Message received. ", payload);
+			//   // ...
+			// });
 
 
 
