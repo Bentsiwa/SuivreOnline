@@ -66,7 +66,7 @@
 		smallImage.style.display = 'block';
 
 		smallImage.src = "data:image/jpeg;base64," + imageData;
-		movePic(imageData);
+		//movePic(imageData);
 
 	}
 
@@ -144,25 +144,31 @@ function resOnError(error) {
     alert(error.code);
     
 }
+ function getPhoto(source) {
+      // Retrieve image file location from specified source
+      alert("here");
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }
+  function onPhotoURISuccess(imageURI) {
+      // Uncomment to view the image file URI
+       alert(imageURI);
 
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
+      // Get image handle
+      //
+      var largeImage = document.getElementById('largeImage');
+
+      // Unhide image elements
+      //
+      largeImage.style.display = 'block';
+
+      // Show the captured photo
+      // The in-line CSS rules are used to resize the image
+      //
+      largeImage.src = imageURI;
     }
 
-    // Beep three times
-    //
-    function playBeep() {
-        navigator.notification.beep(3);
-    }
 
-    // Vibrate for 2 seconds
-    //
-    function vibrate() {
-        navigator.notification.vibrate(2000);
-    }
 
 })();
