@@ -1,40 +1,48 @@
+<!DOCTYPE html>
 <html>
-<head>
- <title>File Transfer Example</title>
- <script type="text/javascript" src="cordova.js"></script>
- <script type="text/javascript">
- function getImage() {
- navigator.camera.getPicture(uploadPhoto, function(message) {
- alert('get picture failed');
- }, {
- quality: 100,
- destinationType: navigator.camera.DestinationType.FILE_URI,
- sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
- });
-}
+  <head>
+    <title>Notification Example</title>
 
-function uploadPhoto(imageURI) {
- var options = new FileUploadOptions();
- options.fileKey = "file";
- options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
- options.mimeType = "image/jpeg";
- console.log(options.fileName);
- var params = new Object();
- params.value1 = "test";
- params.value2 = "param";
- options.params = params;
- options.chunkedMode = false;
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-var ft = new FileTransfer();
- ft.upload(imageURI, "http://suivre.000webhostapp.com/ajaxPage.php?cmd=14", function(result){
- alert(JSON.stringify(result));
- }, function(error){
- alert(JSON.stringify(error));
- }, options);
- }
- </script>
-</head>
-<body>
- <button onclick="getImage()">Upload a Photo</button>
-</body>
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // Show a custom alert
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+    </script>
+  </head>
+  <body>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
+  </body>
 </html>

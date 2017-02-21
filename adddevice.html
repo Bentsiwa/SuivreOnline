@@ -62,7 +62,7 @@
 
                     <div class="col-xs-10 col-sm-6 col-md-4">
                         <div class="box">
-
+                          <a href="untitled.html">Unit</a>
                         <label for="device">Name:</label>
                         <input type="text" name="device" id="device" value="" data-clear-btn="true" placeholder="Iphone 6">
 
@@ -72,8 +72,10 @@
 
                         <label for="tag">Tag ID:</label>
                         <input type="text" name="tag" id="tag" value="" data-clear-btn="true" placeholder="001">
-                        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+
+                        <button id"photolibrary">From Photo Library</button><br>
                         <img style="display:none;" id="largeImage" src="" />
+
                         <button  class="ui-btn" id="fileupload" ><i class='zmdi zmdi-file'></i> Upload a Photo</button>
                         <center><div class="clr-blue-grey nd2-subhead">
                             Or
@@ -126,7 +128,7 @@
             }
             
             reader.readAsDataURL(input.files[0]);
-            alert(smallImage.src);
+           // alert(smallImage.src);
         }
     }
     

@@ -18,6 +18,15 @@
 			});
 		}
 
+		document.getElementById("photolibrary").onclick = function() {
+			navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+	        destinationType: destinationType.FILE_URI,
+	        sourceType: pictureSource.PHOTOLIBRARY });
+		}
+ 			
+
+
+
 		document.getElementById("geolocationdata").addEventListener("click", function() {
 			navigator.geolocation.getCurrentPosition(onSuccess, onError, {
 				enableHighAccuracy : true
@@ -60,6 +69,7 @@
 	}
 
 	function onPhotoDataSuccess(imageData) {
+		alert("here");
 
 		var smallImage = document.getElementById('smallImage');
 
@@ -144,13 +154,7 @@ function resOnError(error) {
     alert(error.code);
     
 }
- function getPhoto(source) {
-      // Retrieve image file location from specified source
-      alert("here");
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
+
   function onPhotoURISuccess(imageURI) {
       // Uncomment to view the image file URI
        alert(imageURI);

@@ -60,6 +60,7 @@
 	}
 
 	function onPhotoDataSuccess(imageData) {
+		
 
 		var smallImage = document.getElementById('smallImage');
 
