@@ -55,7 +55,7 @@
 			return $this->query($strQuery);
 		}
 
-		function addDevice($device,$description, $tag,$id,$image){
+		function addDevice($device,$description, $tag,$id){
 			/**
 			*@var string $strQuery should contain insert query
 			*/
@@ -63,7 +63,7 @@
 			name='$device',
 			description ='$description',
 			tagidentification='$tag',
-			image='$image',
+			image='img/green.jpg',
 			userid='$id'";
 							
 			return $this->query($strQuery);

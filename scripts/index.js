@@ -19,11 +19,17 @@
 		}
 
 		document.getElementById("photolibrary").onclick = function() {
-			navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-	        destinationType: destinationType.FILE_URI,
-	        sourceType: pictureSource.PHOTOLIBRARY });
+			alert("here");
+			navigator.notification.alert(
+			    'You are the winner!',  // message
+			    alertDismissed,         // callback
+			    'Game Over',            // title
+			    'Done'                  // buttonName
+			);
+
 		}
  			
+
 
 
 
