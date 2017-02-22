@@ -142,19 +142,19 @@ function successMove(entry) {
 }
 
 function resOnError(error) {
-    alert(error.code);
+   // alert(error.code);
     
 }
  function getPhoto(source) {
       // Retrieve image file location from specified source
-      alert("here");
+      //alert("here");
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
         sourceType: source });
     }
   function onPhotoURISuccess(imageURI) {
       // Uncomment to view the image file URI
-       alert(imageURI);
+       //alert(imageURI);
 
       // Get image handle
       //

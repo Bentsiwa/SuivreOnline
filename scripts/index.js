@@ -19,7 +19,7 @@
 		}
 
 		document.getElementById("photolibrary").onclick = function() {
-			alert("here");
+			//alert("here");
 			navigator.notification.alert(
 			    'You are the winner!',  // message
 			    alertDismissed,         // callback
@@ -157,7 +157,7 @@ function successMove(entry) {
 }
 
 function resOnError(error) {
-    alert(error.code);
+    //alert(error.code);
     
 }
 

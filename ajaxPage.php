@@ -209,7 +209,7 @@ function addDevice(){
 	// if(!isset($_REQUEST['image'])){
 	// 	echo '{"result":0,"message":"Image is not given"}';
 	// 	return;
-	}
+	//}
 	if($_REQUEST['device']==""){
 		echo '{"result":0,"message":"Device name is not given"}';
 		return;
